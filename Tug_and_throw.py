@@ -25,10 +25,6 @@ DISPLAYSURF = pygame.display.set_mode((Hieght, Width))
 pygame.display.set_caption("Tug and Throw")
 
 
-def measure_dist(a, b):
-    print(a, b, ((a[0] - b[0])**2), ((a[1] - b[1])**2))
-    reducing_factor = 0.08
-    return(int(reducing_factor * math.sqrt(((a[0] - b[0])**2) + ((a[1] - b[1])**2))))
 
 
 class Ball:
@@ -36,9 +32,8 @@ class Ball:
         self.r = r
         self.x = x
         self.y = y
-        # self.directions = 0#[randint(5,20),randint(5,20),randint(-20,-5),randint(-20,-5)]
-        self.speedx = 0  # choice(self.directions)
-        self.speedy = 0  # choice(self.directions)
+        self.speedx = 0  
+        self.speedy = 0  
 
     def draw_ball(self):
         self.x += self.speedx
@@ -88,19 +83,6 @@ class Screen:
 
 
 def main():
-
-    ##    ball1 = Ball(70,200,150)
-    ##    ball2 = Ball(30,100,150)
-    ##    ball3 = Ball(20,250,300)
-    ##    ball4 = Ball(8,25,30)
-    ##    ball5 = Ball(8,215,340)
-    ##    ball6 = Ball(8,10,40)
-    ##    screen = Screen([ball1,ball2,ball3,ball4,ball5,ball6])
-    ##    balllist = []
-    # for i in range(30):
-    ##        ball = Ball(10,randint(10,Width-10),randint(10,Width-10))
-    # balllist.append(ball)
-    ##
     screen = Screen()
 
     creat = False
@@ -121,15 +103,12 @@ def main():
                 started = True
                 startx, starty = event.pos
 
-                # print(event.pos,"----------------1")
-
             elif started and event.type == pygame.MOUSEMOTION:
                 running = True
                 midx, midy = event.pos
 
             if event.type == pygame.MOUSEBUTTONUP:
                 endx, endy = event.pos
-                # print(event.pos,"----------------2")
                 started = False
                 if running:
                     creat = True
@@ -138,10 +117,9 @@ def main():
             pygame.draw.line(DISPLAYSURF, BLUE, (startx, starty), (midx, midy))
 
         if creat and running:
-            ball = Ball(10, abs(endx), abs(endy))  # randint(10,Width-10),randint(10,Width-10))
+            ball = Ball(10, abs(endx), abs(endy))
             temp_speedx = math.ceil(abs((startx - endx) * reducing_factor))
             temp_speedy = math.ceil(abs((starty - endy) * reducing_factor))
-            #print(temp_speedx, temp_speedy)
 
             if startx < endx:
                 ball.speedx = -temp_speedx

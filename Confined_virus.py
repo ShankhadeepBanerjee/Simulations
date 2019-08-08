@@ -13,10 +13,10 @@ BLUE = (0,0,255)
 GREEN = (0,255,0)
 
 
-FPS = 30
+FPS = 15
 
 pygame.init()
-Width, Hieght = 500, 500
+Width, Hieght = 250, 250
 display = (Width, Hieght)
 
 Surf = pygame.display.set_mode(display)
@@ -36,8 +36,8 @@ class Ball:
 		self.speedy = choice(self.directions)
 
 	def update(self):
-		# self.speedx = choice(self.directions)
-		# self.speedy = choice(self.directions)
+		self.speedx = choice(self.directions)
+		self.speedy = choice(self.directions)
 
 		self.x += self.speedx
 		self.y += self.speedy
@@ -67,7 +67,7 @@ class Ball:
     
 
 class Segment:
-	def __init__(self, start, mag, angle= 0, base = True):
+	def __init__(self, start, mag, angle, base = True):
 		self.base = base
 		self.start = Point(start)
 		self.angle = angle
@@ -166,7 +166,7 @@ def game():
 	B1 = Ball()
 	# B2 = Ball()
 
-	arm = Arm(40, 20)
+	arm = Arm(30, 20)
 	# arm1 = Arm(40, 10)
 
 	# mouse = (pygame.mouse.get_pos())
@@ -181,7 +181,7 @@ def game():
 
 		
 
-		#mouse = pygame.mouse.get_pos()
+		# mouse = pygame.mouse.get_pos()
 		arm.follow((B1.x, B1.y))
 		arm.show()
 		# arm1.follow(mouse)
