@@ -4,7 +4,6 @@ from pygame.locals import *
 	
 class Screen:
     def __init__(self):
-        #self.drop_dict = dict()   // Diictionary for storing drop coords
         
         self.drop_list = []
         self.drop_def_rad = 20
@@ -30,25 +29,6 @@ class Screen:
                 
         for this_drop in drops_to_pop:
             self.drop_list.pop(this_drop)
-
-        # Dict implement=====================================================================        
-        ##        drops_to_pop = []
-        ##        
-        ##        for drop in self.drop_dict:
-        ##            pygame.draw.circle(Surf, Blue, drop[0:2], self.drop_dict[drop], 1)
-        ##            pygame.draw.circle(Surf, Blue_1, drop[0:2], self.drop_dict[drop]-5, 2)
-        ##            pygame.draw.circle(Surf, Blue_2, drop[0:2], self.drop_dict[drop]-10, 3)
-        ##            pygame.draw.circle(Surf, Blue_3, drop[0:2], self.drop_dict[drop]-15, 4)
-        ##
-        ##            if self.drop_dict[drop] < 500:
-        ##                self.drop_dict[drop] += 1
-        ##            else:
-        ##                drops_to_pop.append(drop)
-        ##                
-        ##        for this_drop in drops_to_pop:
-        ##            self.drop_dict.pop(this_drop)
-        #==============================================================================			
-
 def main():
     global Surf,Blue,Blue_1,Blue_2,Blue_3
     
@@ -86,13 +66,6 @@ def main():
 
         if theScreen.drop_list:
             theScreen.draw_drops()
-            #print(theScreen.drop_list)
-            
-        # Dict implement=============================================                    
-        ##        if theScreen.drop_dict:
-        ##            theScreen.draw_drops()
-        ##            print(theScreen.drop_dict)
-        #=============================================
         
         pygame.display.update()
         fpsclock.tick(FPS)

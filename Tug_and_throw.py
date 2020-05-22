@@ -16,15 +16,13 @@ GREEN = (0, 255, 0)
 reducing_factor = 0.08
 
 
-FPS = 30
+FPS = 35
 fpsClock = pygame.time.Clock()
 
 pygame.init()
 Hieght, Width = 600, 600
 DISPLAYSURF = pygame.display.set_mode((Hieght, Width))
 pygame.display.set_caption("Tug and Throw")
-
-
 
 
 class Ball:

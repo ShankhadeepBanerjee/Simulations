@@ -18,7 +18,6 @@ pygame.init()
 Width = 500
 Hieght = 500
 display = (Width, Hieght)
-#display = (1000,1000)
 Surf = pygame.display.set_mode(display)
 
 

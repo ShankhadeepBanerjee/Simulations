@@ -15,7 +15,6 @@ Hieght = 500
 FPS = 60
 
 pygame.init()
-
 display = (Width, Hieght)
 Surf = pygame.display.set_mode(display)
 

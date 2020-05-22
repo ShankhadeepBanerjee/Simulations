@@ -36,8 +36,6 @@ class Ball:
 		self.speedy = choice(self.directions)
 
 	def update(self):
-		# self.speedx = choice(self.directions)
-		# self.speedy = choice(self.directions)
 
 		self.x += self.speedx
 		self.y += self.speedy
@@ -164,13 +162,8 @@ class Arm:
 
 def game():
 	B1 = Ball()
-	# B2 = Ball()
 
 	arm = Arm(40, 20)
-	# arm1 = Arm(40, 10)
-
-	# mouse = (pygame.mouse.get_pos())
-	# Surf.fill(White)
 	while True:
 
 		Surf.fill(White)
@@ -180,12 +173,8 @@ def game():
 				sys.exit()
 
 		
-
-		#mouse = pygame.mouse.get_pos()
 		arm.follow((B1.x, B1.y))
 		arm.show()
-		# arm1.follow(mouse)
-		# arm1.show()
 
 
 		B1.draw()

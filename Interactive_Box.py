@@ -32,8 +32,6 @@ def main():
                 if not box_pos_chng:
                     box_pos_chng = True
                 target_posx, target_posy = pygame.mouse.get_pos()
-##                target_posx -= 25
-##                target_posy -= 25
 
             
         if box_pos_chng:

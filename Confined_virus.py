@@ -164,13 +164,8 @@ class Arm:
 
 def game():
 	B1 = Ball()
-	# B2 = Ball()
 
 	arm = Arm(30, 20)
-	# arm1 = Arm(40, 10)
-
-	# mouse = (pygame.mouse.get_pos())
-	# Surf.fill(White)
 	while True:
 
 		Surf.fill(White)
@@ -179,13 +174,8 @@ def game():
 				pygame.quit()
 				sys.exit()
 
-		
-
-		# mouse = pygame.mouse.get_pos()
 		arm.follow((B1.x, B1.y))
 		arm.show()
-		# arm1.follow(mouse)
-		# arm1.show()
 
 
 		B1.draw()
